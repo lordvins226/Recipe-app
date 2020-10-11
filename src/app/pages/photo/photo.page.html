@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-center">Photos</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngIf="photos">
+        <ion-item *ngFor="let item of photos">
+            <ion-avatar slot="start">
+                <img src="{{item.userImageURL}}">
+            </ion-avatar>
+            <ion-label>
+                <h3>{{item.user}}</h3>
+                <p>Item Avatar avatar</p>
+                <p>jsvnksbbvjqmnfbmjnqjmbnSbfqmnfrqmbnnnnnnnnnnnnnpqnerfqbfsjMb,nS</p>
+                <ion-row>
+                    <ion-col class="ion-align-self-start">
+                        <ion-row>
+                            <ion-icon name="download">
+                            </ion-icon>
+                            <p> {{item.downloads}}</p>
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
