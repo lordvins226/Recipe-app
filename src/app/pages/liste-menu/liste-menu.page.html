@@ -1,20 +1,25 @@
 <ion-header>
-    <ion-toolbar color="tertiary ion-padding">
-        <ion-buttons slot="start" color="danger" (click)="openMenu()">
-            <ion-icon name="menu" size="large"></ion-icon>
-        </ion-buttons>
-        <ion-searchbar (ionChange)="search($event)" animated=" true " placeholder="Recipes search">
-
-        </ion-searchbar>
-    </ion-toolbar>
+  <ion-toolbar color="tertiary ion-padding">
+    <ion-buttons slot="start" color="danger" (click)="openMenu()">
+      <ion-icon name="menu" size="large"></ion-icon>
+    </ion-buttons>
+    <ion-searchbar
+      (ionChange)="search($event)"
+      animated=" true "
+      placeholder="Recipes search"
+    >
+    </ion-searchbar>
+  </ion-toolbar>
 </ion-header>
 <ion-content>
-
-    <ion-card *ngFor=" let item of listMains | filter:searchText" (click)=" detailWithQueryParams(item) ">
-        <img src="{{item.Image}} ">
-        <ion-card-header>
-            <ion-card-subtitle>Pays d'orgine: {{item.Origine}}</ion-card-subtitle>
-            <ion-card-title><b>Nom: {{item.Nom}}</b></ion-card-title>
-        </ion-card-header>
-    </ion-card>
+  <ion-card
+    *ngFor=" let item of listMains | filter:searchText"
+    (click)=" detailWithQueryParams(item) "
+  >
+    <img src="{{item.Image}} " />
+    <ion-card-header>
+      <ion-card-subtitle>Pays d'orgine: {{item.Origine}}</ion-card-subtitle>
+      <ion-card-title><b>Nom: {{item.Nom}}</b></ion-card-title>
+    </ion-card-header>
+  </ion-card>
 </ion-content>
